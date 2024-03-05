@@ -1,0 +1,19 @@
+﻿@model PartyRecordApp.Entities.Party
+
+@{
+    ViewData["Title"] = "Invitation Response";
+}
+
+<h4>Invitation Response</h4>
+
+<div>
+    <p>Description: @Model.EventDescription</p>
+    <p>Location: @Model.EventLocation</p>
+    <p>Date: @Model.EventDate</p>
+
+    <form asp-controller="Party" asp-action="EmailResponse" method="post">
+        <input type="hidden" name="invitationId" value="@Model.Invitations.First().InvitationId" />
+        <button type="submit" name="response" value="Yes" class="btn btn-primary">Yes</button>
+        <button type="submit" name="response" value="No" class="btn btn-danger">No</button>
+    </form>
+</div>

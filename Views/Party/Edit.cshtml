@@ -1,0 +1,21 @@
+﻿@model PartyViewModel
+
+<form asp-controller="Party" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="NewParty.PartyId" />
+    <div class="form-group">
+        <label asp-for="NewParty.EventDescription">Description</label>
+        <input asp-for="NewParty.EventDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewParty.EventLocation">Location</label>
+        <input asp-for="NewParty.EventLocation" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NewParty.EventDate">Date</label>
+        <input asp-for="NewParty.EventDate" class="form-control" />
+    </div>
+
+    <!-- Add input fields for other party details as needed -->
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

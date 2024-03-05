@@ -1,0 +1,37 @@
+﻿@model List<Party>
+
+
+@{
+    ViewData["Title"] = "All Parties";
+}
+
+<a asp-controller="Party" asp-action="Add">Add new Party</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Num of Invites</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Party p in Model)
+        {
+            <tr>
+                <td>@p.EventDescription</td>
+                <td>@p.EventDate</td>
+                <td>@p.EventLocation</td>
+                <td>@p.NumOfInvites</td>
+                <td>
+                    <a asp-controller="Party" asp-action="Manage" asp-route-id="@p.PartyId">Manage</a>
+                    <span class="my-2">|</span>
+                    <a asp-controller="Party" asp-action="Delete" asp-route-id="@p.PartyId">Delete</a>
+                    <span class="my-2">|</span>
+                    <a asp-controller="Party" asp-action="Edit" asp-route-id="@p.PartyId">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
