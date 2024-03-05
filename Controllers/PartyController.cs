@@ -231,7 +231,7 @@ namespace PartyRecordApp.Controllers
         // Method to send email to a guest
         private void SendEmail(Invitation invitation)
         {
-            string fromAddress = "liam.marek.knapp@gmail.com";
+            string fromAddress = "Enter Your email";
             string toAddress = invitation.GuestEmail?.Trim(); // Trim whitespace from the email address, if any
 
             if (string.IsNullOrEmpty(toAddress))
@@ -246,7 +246,7 @@ namespace PartyRecordApp.Controllers
                 var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential(fromAddress, "isfy ymje lafu uncs"),
+                    Credentials = new NetworkCredential(fromAddress, "Enter ur password"),
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     EnableSsl = true,
